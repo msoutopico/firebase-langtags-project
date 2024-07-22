@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>test</title>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" real="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <script src="https://kit.fontawesome.com/b5942bba88.js" crossorigin="anonymous"></script> -->
+        <script src="https://kit.fontawesome.com/14df3c16a3.js" crossorigin="anonymous"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-functions.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/init.js"></script>
+
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- 
+            https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself
+            https://fontawesome.com/v4.7.0/get-started/
+        -->
+        <link type="text/css" rel="stylesheet" href="my_styles.css" />
+    </head>
+    <body>
+
+        
+    <i class="fas fa-user"></i> <!-- uses solid style -->
+    <i class="far fa-user"></i> <!-- uses regular style -->
+    <!--brand icon-->
+    <i class="fab fa-github-square"></i> <!-- uses brands style -->
+    <i class="fas fa-trash"></i>
+
+        <h1>Langtags</h1>
+
+        
+        <div class="content">
+            <!-- todo: form only visible to steve and manuel-->
+            <form id="add-langtag-form">
+                <div class="form-group">
+                    <input type="text" name="omegat" placeholder="OmegaT">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="capstan" placeholder="cApStAn">
+                </div>
+                <button type="submit" class="btn btn-primary">Add langtag</button>
+            </form>
+            <div class="feedback alert alert-warning"></div>
+            <!-- <ul id="langtag-list"></ul> -->
+
+            <table id="langtag-table"></table>
+        </div>
+
+        <button id="popup-triggerer">click me</button>
+
+        <div class="popup-wrapper">
+            <div class="popup">
+                <div class="popup-close">×</div>
+                <div class="popup-content">
+                    <h3>Edit language tag</h3>
+                    <form id="langtag-edit-form">
+                        <br/><label for="omegat">OmegaT:</label>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyCYRjD0cwbG3k650S7ZBDL2PuHW7Dd6acA",
+                authDomain: "langtags-fd750.firebaseapp.com",
+                databaseURL: "https://langtags-fd750-default-rtdb.europe-west1.firebasedatabase.app",
+                projectId: "langtags-fd750",
+                storageBucket: "langtags-fd750.appspot.com",
+                messagingSenderId: "677494757687",
+                appId: "1:677494757687:web:6acc0e4905986c156162b2",
+                measurementId: "G-VG3Y8VVCY7"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true })
+
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>
